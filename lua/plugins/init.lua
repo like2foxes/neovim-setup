@@ -1,0 +1,27 @@
+return require('packer').startup(function(use)
+  -- Packer can manage itself
+  use 'nvim-lua/plenary.nvim'
+  use 'wbthomason/packer.nvim'
+  use 'wittyjudge/gruvbox-material.nvim'
+  use {'nvim-treesitter/nvim-treesitter', run = ".TSUpdate"}
+  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-lualine/lualine.nvim'
+  use 'akinsho/bufferline.nvim'
+  use 'kyazdani42/nvim-tree.lua'
+  use 'windwp/nvim-ts-autotag'
+  use 'p00f/nvim-ts-rainbow'
+  use 'windwp/nvim-autopairs'
+  use 'folke/which-key.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'glepnir/indent-guides.nvim'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'onsails/lspkind-nvim'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
+end)
