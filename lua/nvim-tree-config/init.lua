@@ -32,11 +32,7 @@ require'nvim-tree'.setup {
     args = {}
   },
   filters = {
-<<<<<<< HEAD
     dotfiles = false,
-=======
-    dotfiles = true,
->>>>>>> 13dacb65746eb784599a174f285a51f00382eeba
     custom = {}
   },
   git = {
