@@ -1,4 +1,5 @@
 -- Setup lspconfig.
+local root_pattern = require('lspconfig').util.root_pattern
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 local servers = {
@@ -24,7 +25,7 @@ require'lspconfig'.eslint.setup{
 
 require'lspconfig'.tsserver.setup{
   filetypes = { 'javascript', 'typescript', 'typescriptreact' },
-  root_dir = function() return vim.loop.cwd() end
+  root_dir = root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git") 
 }
 
 require'lspconfig'.sumneko_lua.setup {
