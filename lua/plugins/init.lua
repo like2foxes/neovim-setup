@@ -4,7 +4,6 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'wittyjudge/gruvbox-material.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ".TSUpdate"}
-  use 'kyazdani42/nvim-web-devicons'
   use 'nvim-lualine/lualine.nvim'
   use 'akinsho/bufferline.nvim'
   use 'kyazdani42/nvim-tree.lua'
@@ -26,4 +25,6 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
+  use {'phaazon/hop.nvim', branch = 'v1'}
+  use 'kyazdani42/nvim-web-devicons'
 end)
