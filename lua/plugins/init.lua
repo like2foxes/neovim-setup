@@ -26,4 +26,7 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
+  use 'simrat39/rust-tools.nvim'
+  use 'mfussenegger/nvim-dap'
+  use {'tami5/lspsaga.nvim', branch = 'nvim6.0'}
 end)

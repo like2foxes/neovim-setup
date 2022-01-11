@@ -18,7 +18,7 @@ vim.o.timeoutlen = 500
 vim.o.clipboard = 'unnamedplus'
 vim.o.hlsearch = false
 vim.o.ignorecase = true
-vim.o.scrolloff = 5
+vim.o.scrolloff = 20
 vim.o.sidescrolloff = 5
 vim.o.mouse = 'a'
 vim.wo.wrap = false
@@ -34,5 +34,4 @@ vim.o.autoindent = true
 vim.bo.autoindent = true
 vim.o.expandtab = true
 vim.bo.expandtab = true
-
 
