@@ -25,9 +25,29 @@ require'lspconfig'.eslint.setup{
 
 require'lspconfig'.tsserver.setup{
   filetypes = { 'javascript', 'typescript', 'typescriptreact' },
-  root_dir = root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git") 
+  root_dir = root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
 }
 
+local on_attach = function (client)
+  require('completion').on_attach(client)
+end
+require'lspconfig'.rust_analyzer.setup({
+  on_attach=on_attach,
+    settings = {
+        ["rust-analyzer"] = {
+            assist = {
+                importGranularity = "module",
+                importPrefix = "by_self",
+            },
+            cargo = {
+                loadOutDirsFromCheck = true
+            },
+            procMacro = {
+                enable = true
+            },
+        }
+    }
+})
 require'lspconfig'.sumneko_lua.setup {
   settings = {
     Lua = {

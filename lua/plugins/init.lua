@@ -26,4 +26,7 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
   use 'kyazdani42/nvim-web-devicons'
+  use 'simrat39/rust-tools.nvim'
+  use 'mfussenegger/nvim-dap'
+  use {'tami5/lspsaga.nvim', branch = 'nvim6.0'}
 end)

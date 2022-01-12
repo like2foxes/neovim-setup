@@ -7,7 +7,7 @@ local mappings = {
   E = {":e ~/.config/nvim/init.lua<cr>", "Edit config"},
   f = {":Telescope find_files<cr>", "Telescope Find Files"},
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
-  t = {t = {":ToggleTerm<cr>", "Split Below"}, f = {":ToggleTerm<cr>", "Floating Terminal"}, l = {":LazyGit<cr>", "LazyGit"}},
+  g = {":LazyGit<cr>", "LazyGit"},
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},
