@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox-material.nvim",
     url = "https://github.com/wittyjudge/gruvbox-material.nvim"
   },
-  ["hop.nvim"] = {
-    loaded = true,
-    path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\hop.nvim",
-    url = "https://github.com/phaazon/hop.nvim"
-  },
   ["indent-guides.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\indent-guides.nvim",

@@ -25,6 +25,5 @@ return require('packer').startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'lewis6991/gitsigns.nvim'
   use 'kdheepak/lazygit.nvim'
-  use {'phaazon/hop.nvim', branch = 'v1'}
   use 'kyazdani42/nvim-web-devicons'
 end)
