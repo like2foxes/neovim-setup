@@ -28,5 +28,6 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'simrat39/rust-tools.nvim'
   use 'mfussenegger/nvim-dap'
+  use 'ThePrimeagen/refactoring.nvim'
   use {'tami5/lspsaga.nvim', branch = 'nvim6.0'}
 end)

@@ -5,9 +5,9 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = true,
   ignore_ft_on_setup  = {},
-  auto_close          = true,
+  auto_close          = false,
   open_on_tab         = false,
-  hijack_cursor       = false,
+  hijack_cursor       = true,
   update_cwd          = false,
   update_to_buf_dir   = {
     enable = true,
@@ -41,7 +41,7 @@ require'nvim-tree'.setup {
     timeout = 500,
   },
   view = {
-    width =30,
+    width =50,
     height = 30,
     hide_root_folder = false,
     side = 'left',
