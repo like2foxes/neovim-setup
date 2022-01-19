@@ -86,32 +86,32 @@ ins_left({
   padding = { left = 0, right = 1 }, -- We don't need space before this
 })
 
+local mode_color = {
+  n = colors.red,
+  i = colors.green,
+  v = colors.blue,
+  [''] = colors.blue,
+  V = colors.blue,
+  c = colors.magenta,
+  no = colors.red,
+  s = colors.orange,
+  S = colors.orange,
+  [''] = colors.orange,
+  ic = colors.yellow,
+  R = colors.violet,
+  Rv = colors.violet,
+  cv = colors.red,
+  ce = colors.red,
+  r = colors.cyan,
+  rm = colors.cyan,
+  ['r?'] = colors.cyan,
+  ['!'] = colors.red,
+  t = colors.red,
+}
+
 ins_left({
   -- mode component
   function()
-    -- auto change color according to neovims mode
-    local mode_color = {
-      n = colors.red,
-      i = colors.green,
-      v = colors.blue,
-      [''] = colors.blue,
-      V = colors.blue,
-      c = colors.magenta,
-      no = colors.red,
-      s = colors.orange,
-      S = colors.orange,
-      [''] = colors.orange,
-      ic = colors.yellow,
-      R = colors.violet,
-      Rv = colors.violet,
-      cv = colors.red,
-      ce = colors.red,
-      r = colors.cyan,
-      rm = colors.cyan,
-      ['r?'] = colors.cyan,
-      ['!'] = colors.red,
-      t = colors.red,
-    }
     vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
     return ''
   end,
@@ -120,12 +120,26 @@ ins_left({
 })
 
 ins_left({
+  'mode',
+  function ()
+    vim.api.nvim_command('hi! LualineMode guifg=' .. mode_color[vim.fn.mode()] .. ' guibg=' .. colors.bg)
+  end,
+  color = 'LualineMode'
+})
+
+ins_left({
   -- filesize component
   'filesize',
   cond = conditions.buffer_not_empty,
 })
 
-ins_left({require('auto-session-library').current_session_name})
+ins_left({
+  function ()
+    local session = require('auto-session-library').current_session_name()
+    return session
+  end,
+  color = { fg = colors.magenta, gui = 'bold' },
+})
 
 ins_left({
   'filename',
@@ -137,7 +151,13 @@ ins_left({ 'location' })
 
 ins_left({ 'progress', color = { fg = colors.fg, gui = 'bold' } })
 
-ins_left({'filesize', color = { fg = colors.fg, gui = 'bold' }})
+ins_left({
+  function ()
+    return vim.api.nvim_buf_line_count(0)
+  end,
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.orange, gui = 'bold' },
+})
 
 ins_left({
   'diagnostics',
