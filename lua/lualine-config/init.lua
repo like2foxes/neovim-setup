@@ -37,8 +37,8 @@ local conditions = {
 local config = {
   options = {
     -- Disable sections and component separators
-    component_separators = '',
-    section_separators = '',
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
     theme = {
       -- We are going to use lualine_c an lualine_x as left and
       -- right section. Both are highlighted by c theme .  So we
@@ -128,17 +128,11 @@ ins_left({
 })
 
 ins_left({
-  -- filesize component
-  'filesize',
-  cond = conditions.buffer_not_empty,
-})
-
-ins_left({
   function ()
     local session = require('auto-session-library').current_session_name()
     return session
   end,
-  color = { fg = colors.magenta, gui = 'bold' },
+  color = { fg = colors.blue, gui = 'bold' },
 })
 
 ins_left({
@@ -147,7 +141,14 @@ ins_left({
   color = { fg = colors.magenta, gui = 'bold' },
 })
 
-ins_left({ 'location' })
+ins_left({
+  -- filesize component
+  'filesize',
+  cond = conditions.buffer_not_empty,
+  color = { fg = colors.yellow}
+})
+
+ins_left({ 'location', color = {fg = colors.violet} })
 
 ins_left({ 'progress', color = { fg = colors.fg, gui = 'bold' } })
 
