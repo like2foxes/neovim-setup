@@ -29,5 +29,6 @@ return require('packer').startup(function(use)
   use 'simrat39/rust-tools.nvim'
   use 'mfussenegger/nvim-dap'
   use 'ThePrimeagen/refactoring.nvim'
+  use 'rmagatti/auto-session'
   use {'tami5/lspsaga.nvim', branch = 'nvim6.0'}
 end)

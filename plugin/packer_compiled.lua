@@ -74,6 +74,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["auto-session"] = {
+    loaded = true,
+    path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-session",
+    url = "https://github.com/rmagatti/auto-session"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\bufferline.nvim",
