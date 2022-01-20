@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["dracula.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\dracula.nvim",
+    url = "https://github.com/Mofiqul/dracula.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
@@ -148,6 +153,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["monokai.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\monokai.nvim",
+    url = "https://github.com/tanvirtin/monokai.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
@@ -198,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
