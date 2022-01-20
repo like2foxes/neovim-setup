@@ -30,5 +30,6 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-dap'
   use 'ThePrimeagen/refactoring.nvim'
   use 'rmagatti/auto-session'
+  use 'ionide/Ionide-vim'
   use {'tami5/lspsaga.nvim', branch = 'nvim6.0'}
 end)

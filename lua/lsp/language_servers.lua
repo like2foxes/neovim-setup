@@ -7,6 +7,7 @@ local servers = {
   'cssls',
   'emmet_ls',
   'fsautocomplete',
+  'csharp_ls',
   'hls',
   'jsonls',
 }
@@ -31,6 +32,7 @@ require'lspconfig'.tsserver.setup{
 local on_attach = function (client)
   require('completion').on_attach(client)
 end
+
 require'lspconfig'.rust_analyzer.setup({
   on_attach=on_attach,
     settings = {
@@ -48,6 +50,7 @@ require'lspconfig'.rust_analyzer.setup({
         }
     }
 })
+
 require'lspconfig'.sumneko_lua.setup {
   settings = {
     Lua = {
