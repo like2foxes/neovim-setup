@@ -8,6 +8,7 @@ local mappings = {
   f = {":Telescope find_files<cr>", "Telescope Find Files"},
   r = {":Telescope live_grep<cr>", "Telescope Live Grep"},
   g = {":LazyGit<cr>", "LazyGit"},
+  h = {":GHCup<cr>", "GHCup"},
   a = {"zR", "Open all folds"},
   ca = {"zM", "Close all folds"},
   o = {"zO", "Open fold"},

@@ -1,6 +1,7 @@
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'nvim-lua/plenary.nvim'
+  use 'nvim-lua/completion-nvim'
   use 'wbthomason/packer.nvim'
   use 'navarasu/onedark.nvim'
   use 'Mofiqul/dracula.nvim'
@@ -34,5 +35,8 @@ return require('packer').startup(function(use)
   use 'ThePrimeagen/refactoring.nvim'
   use 'rmagatti/auto-session'
   use 'ionide/Ionide-vim'
+  use 'rbgrouleff/bclose.vim'
+  use 'hasufell/ghcup.vim'
+  use 'mfussenegger/nvim-jdtls'
   use {'tami5/lspsaga.nvim', branch = 'nvim6.0'}
 end)

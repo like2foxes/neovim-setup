@@ -5,15 +5,22 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 local servers = {
   'html',
   'cssls',
+  'clangd',
   'emmet_ls',
   'fsautocomplete',
-  'csharp_ls',
-  'hls',
+  'omnisharp',
   'jsonls',
+  'elmls'
 }
+
+local on_attach = function (client)
+  require('completion').on_attach(client)
+end
+
 for _,server in ipairs(servers) do
   require'lspconfig'[server].setup{
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = require'completion'.on_attach
   }
 end
 local runtime_path = vim.split(package.path, ';')
@@ -29,9 +36,6 @@ require'lspconfig'.tsserver.setup{
   root_dir = root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
 }
 
-local on_attach = function (client)
-  require('completion').on_attach(client)
-end
 
 require'lspconfig'.rust_analyzer.setup({
   on_attach=on_attach,
@@ -49,6 +53,16 @@ require'lspconfig'.rust_analyzer.setup({
             },
         }
     }
+})
+
+require'lspconfig'.hls.setup({
+  on_attach = on_attach,
+  settings = {
+    haskell = {
+      hlintOn = true,
+      formattingProvider = "fourmolu"
+    }
+  }
 })
 
 require'lspconfig'.sumneko_lua.setup {
