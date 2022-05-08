@@ -5,8 +5,12 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'navarasu/onedark.nvim'
   use 'Mofiqul/dracula.nvim'
-  use 'wittyjudge/gruvbox-material.nvim'
+  use 'Mofiqul/vscode.nvim'
+  use 'ellisonleao/gruvbox.nvim'
+  use 'marko-cerovac/material.nvim'
+  use 'sainnhe/gruvbox-material'
   use 'tanvirtin/monokai.nvim'
+  use {'luisiacc/gruvbox-baby', branch = 'main'}
   use {'nvim-treesitter/nvim-treesitter', run = ".TSUpdate"}
   use 'nvim-lualine/lualine.nvim'
   use 'akinsho/bufferline.nvim'
@@ -38,5 +42,5 @@ return require('packer').startup(function(use)
   use 'rbgrouleff/bclose.vim'
   use 'hasufell/ghcup.vim'
   use 'mfussenegger/nvim-jdtls'
-  use {'tami5/lspsaga.nvim', branch = 'nvim6.0'}
+  use 'tami5/lspsaga.nvim'
 end)
