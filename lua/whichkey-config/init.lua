@@ -12,6 +12,7 @@ local mappings = {
   ca = {"zM", "Close all folds"},
   o = {"zO", "Open fold"},
   c = {"zC", "Close fold"},
+  h = {":noh<cr>", "Clear search highlight"},
   l = {
     name = "LSP",
     i = {":LspInfo<cr>", "Connected Language Servers"},

@@ -124,10 +124,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  ["gruvbox-material.nvim"] = {
+  ["gruvbox.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox-material.nvim",
-    url = "https://github.com/wittyjudge/gruvbox-material.nvim"
+    path = "C:\\Users\\Shai\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
   ["indent-guides.nvim"] = {
     loaded = true,
@@ -252,5 +252,6 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
+  error_msg = error_msg:gsub('"', '\\"')
   vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

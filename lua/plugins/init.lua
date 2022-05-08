@@ -4,7 +4,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use 'navarasu/onedark.nvim'
   use 'Mofiqul/dracula.nvim'
-  use 'wittyjudge/gruvbox-material.nvim'
+  use 'ellisonleao/gruvbox.nvim'
   use 'tanvirtin/monokai.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ".TSUpdate"}
   use 'nvim-lualine/lualine.nvim'
