@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
   use 'nvim-lua/completion-nvim'
   use 'wbthomason/packer.nvim'
   use 'navarasu/onedark.nvim'
+  use 'jose-elias-alvarez/null-ls.nvim'
   use 'Mofiqul/dracula.nvim'
   use 'Mofiqul/vscode.nvim'
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }

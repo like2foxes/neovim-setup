@@ -15,4 +15,8 @@ require('lspsaga-config')
 require('refactor-config')
 require('gitsigns-config')
 require('colorscheme-config')
+<<<<<<< Updated upstream
 require('hop-config')
+=======
+require('null-ls-config')
+>>>>>>> Stashed changes
