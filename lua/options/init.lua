@@ -42,4 +42,5 @@ vim.o.wildmenu = true
 vim.o.wildmode = 'full'
 vim.bo.swapfile = false
 vim.bo.undofile = true
+vim.wo.relativenumber = true
 --vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
