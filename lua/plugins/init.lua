@@ -6,7 +6,8 @@ return require('packer').startup(function(use)
   use 'navarasu/onedark.nvim'
   use 'Mofiqul/dracula.nvim'
   use 'Mofiqul/vscode.nvim'
-  use 'ellisonleao/gruvbox.nvim'
+	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use 'ellisonleao/gruvbox.nvim'
   use 'marko-cerovac/material.nvim'
   use 'sainnhe/gruvbox-material'
   use 'tanvirtin/monokai.nvim'
