@@ -8,6 +8,7 @@ return require('packer').startup(function(use)
   use 'Mofiqul/vscode.nvim'
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	use 'ellisonleao/gruvbox.nvim'
+	use "ray-x/lsp_signature.nvim"
   use 'marko-cerovac/material.nvim'
   use 'sainnhe/gruvbox-material'
   use 'tanvirtin/monokai.nvim'
