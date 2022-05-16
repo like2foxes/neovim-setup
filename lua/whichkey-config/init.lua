@@ -11,13 +11,10 @@ local mappings = {
   o = {"zO", "Open fold"},
   c = {"zC", "Close fold"},
   h = {":noh<cr>", "Clear search highlight"},
-  f = {
-	  name = "Hop",
-	  f = {"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", "Hop Inclusive"},
-	  F = {"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", "Reverse Hop Inclusive"},
-	  t = {"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", "Hop Exclusive"},
-	  T = {"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", "Hop Exclusive"},
-  },
+  f = {"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", "Hop Inclusive"},
+  F = {"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", "Reverse Hop Inclusive"},
+  t = {"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", "Hop Exclusive"},
+  T = {"<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", "Hop Exclusive"},
   j = {
 	  name = "Telescope",
 	  f = {":Telescope find_files<cr>", "Find Files"},
