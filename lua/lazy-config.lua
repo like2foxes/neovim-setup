@@ -80,4 +80,5 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
         },
     },
+	{ "Shatur/neovim-session-manager" }
 })
