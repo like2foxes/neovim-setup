@@ -9,7 +9,7 @@ local t = require("telescope.builtin")
 vim.keymap.set("n", "<leader>fF", t.find_files, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>ff", t.find_files, { desc = "Find Project Files" })
 vim.keymap.set("n", "<leader> ", t.buffers, { desc = "Find Buffers" })
-vim.keymap.set("n", "<leader>fg", t.grep_string, { desc = "Grep" })
+vim.keymap.set("n", "<leader>fg", t.live_grep, { desc = "Grep" })
 vim.keymap.set("n", "<leader>fs", t.treesitter, { desc = "Find Symbols" })
 
 -- lsp formating
