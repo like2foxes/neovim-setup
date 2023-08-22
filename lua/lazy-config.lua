@@ -39,6 +39,7 @@ require("lazy").setup({
 			}
 		end
 	},
+	{ "nvim-treesitter/nvim-treesitter-textobjects", event = "InsertEnter" },
 	{
 		"nvim-treesitter/playground"
 	},
@@ -47,8 +48,8 @@ require("lazy").setup({
 		branch = 'v2.x',
 		dependencies = {
 			-- LSP Support
-			{ 'neovim/nvim-lspconfig' },     -- Required
-			{ 'williamboman/mason.nvim' },   -- Optional
+			{ 'neovim/nvim-lspconfig' },    -- Required
+			{ 'williamboman/mason.nvim' },  -- Optional
 			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
 			-- Autocompletion
@@ -73,12 +74,13 @@ require("lazy").setup({
 	{
 		"lewis6991/gitsigns.nvim"
 	},
-    {
-        "kdheepak/lazygit.nvim",
-        -- optional for floating window border decoration
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-        },
-    },
-	{ "Shatur/neovim-session-manager" }
+	{
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
+	{ "Shatur/neovim-session-manager" },
+	{ "tpope/vim-fugitive" },
 })
