@@ -5,3 +5,5 @@ require("session-config")
 require("mapping")
 require("options")
 
+vim.api.nvim_create_autocmd({ "bufEnter" }, { pattern = { "*" }, command = "normal zx", })
+
