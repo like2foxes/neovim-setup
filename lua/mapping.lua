@@ -10,7 +10,7 @@ vim.keymap.set("n", "<leader>fF", t.find_files, { desc = "Find Files" })
 vim.keymap.set("n", "<leader>ff", t.find_files, { desc = "Find Project Files" })
 vim.keymap.set("n", "<leader> ", t.buffers, { desc = "Find Buffers" })
 vim.keymap.set("n", "<leader>fg", t.live_grep, { desc = "Grep" })
-vim.keymap.set("n", "<leader>fs", t.treesitter, { desc = "Find Symbols" })
+vim.keymap.set("n", "<leader>ss", t.treesitter, { desc = "Find Symbols" })
 
 -- lsp formating
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format Buffer" })
@@ -23,3 +23,5 @@ vim.keymap.set("v", "<leader>cf", function()
 		}
 	})
 end, { desc = "Format Selection" })
+
+vim.keymap.set("n", "<C-s>", ":e ~/.config/nvim<CR>", { desc = "Configuration" })
