@@ -81,6 +81,4 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 		},
 	},
-	{ "Shatur/neovim-session-manager" },
-	{ "tpope/vim-fugitive" },
 })
