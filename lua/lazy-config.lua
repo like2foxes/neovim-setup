@@ -71,14 +71,4 @@ require("lazy").setup({
 			-- refer to the configuration section below
 		}
 	},
-	{
-		"lewis6991/gitsigns.nvim"
-	},
-	{
-		"kdheepak/lazygit.nvim",
-		-- optional for floating window border decoration
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-		},
-	},
 })
