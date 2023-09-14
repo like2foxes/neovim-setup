@@ -12,6 +12,9 @@ vim.keymap.set("n", "<leader> ", t.buffers, { desc = "Find Buffers" })
 vim.keymap.set("n", "<leader>fg", t.live_grep, { desc = "Grep" })
 vim.keymap.set("n", "<leader>ss", t.treesitter, { desc = "Find Symbols" })
 
+-- gitsigns
+vim.keymap.set("n", "<leader>gg", ":Gitsigns blame_line<CR>", { desc = "Git Blame" })
+
 -- lsp formating
 vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format Buffer" })
 vim.keymap.set("v", "<leader>cf", function()
