@@ -59,7 +59,10 @@ require("lazy").setup({
 				'L3MON4D3/LuaSnip',
 				run = "make install_jsregexp"
 			}, -- Required
-			{ "rafamadriz/friendly-snippets" }
+			{ "rafamadriz/friendly-snippets" },
+			{ 'hrsh7th/cmp-buffer' },
+			{ 'hrsh7th/cmp-path' },
+			{ 'hrsh7th/cmp-cmdline' },
 		}
 	},
 })
