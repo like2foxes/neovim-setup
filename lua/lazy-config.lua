@@ -16,16 +16,47 @@ require("lazy").setup({
 		tag = '0.1.2',
 		dependencies = { 'nvim-lua/plenary.nvim' },
 		config = function()
+			local actions = require("telescope.actions")
+			local trouble = require("trouble.providers.telescope")
 			require 'telescope'.setup {
 				defaults = {
 					file_ignore_patterns = {
 						"node_modules"
+					},
+					mappings = {
+						i = { ["<C-t>"] = trouble.open_with_trouble },
+						n = { ["<C-t>"] = trouble.open_with_trouble },
 					}
 				}
 			}
 		end
 	},
-	{ 'nvim-tree/nvim-web-devicons' },
+	{ 'nvim-tree/nvim-web-devicons', opts = {} },
+	{
+		"RRethy/vim-illuminate",
+		config = function()
+			require('illuminate').configure({
+				delay = 200,
+				large_file_cutoff = 2000,
+				large_file_overrides = {
+					providers = { "lsp" },
+				},
+			})
+		end
+	},
+	{
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		opts = {
+			-- your configuration comes here
+			-- or leave it empty to use the default settings
+			-- refer to the configuration section below
+		}
+	},
+	{
+		'stevearc/dressing.nvim',
+		opts = {},
+	},
 	{
 		'rmagatti/auto-session',
 		opts = {},
@@ -45,6 +76,11 @@ require("lazy").setup({
 		end
 	},
 	{
+		"folke/trouble.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		opts = {}
+	},
+	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = {
 			'nvim-tree/nvim-web-devicons',
@@ -57,11 +93,6 @@ require("lazy").setup({
 		}
 	},
 	{
-		'numToStr/Comment.nvim',
-		opts = {},
-		lazy = false
-	},
-	{
 		'lewis6991/gitsigns.nvim',
 		opts = {
 			numhl = true,
@@ -72,6 +103,17 @@ require("lazy").setup({
 		'windwp/nvim-autopairs',
 		event = 'InsertEnter',
 		opts = {}
+	},
+	{ 'echasnovski/mini.files', version = false, opts = {} },
+	{ 'echasnovski/mini.animate', version = false, opts = {} },
+	{ 'echasnovski/mini.comment', version = false, opts = {} },
+	{
+		"rcarriga/nvim-notify",
+		opts = {},
+		config = function ()
+			vim.notify = require("notify")
+			require("telescope").load_extension("notify")
+		end
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -86,11 +128,10 @@ require("lazy").setup({
 					additional_vim_regex_highlighting = false,
 				}
 			}
-		end
+		end,
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
-		event = "InsertEnter",
 		config = function()
 			require 'nvim-treesitter.configs'.setup {
 				textobjects = {
@@ -181,10 +222,10 @@ require("lazy").setup({
 						-- Use if you want more granular movements
 						-- Make it even more gradual by adding multiple queries and regex.
 						goto_next = {
-							["]d"] = "@conditional.outer",
+							["]i"] = "@conditional.outer",
 						},
 						goto_previous = {
-							["[d"] = "@conditional.outer",
+							["[i"] = "@conditional.outer",
 						}
 					},
 				},
@@ -193,7 +234,7 @@ require("lazy").setup({
 
 	},
 	{
-		"nvim-treesitter/playground"
+		"nvim-treesitter/nvim-treesitter-context", opts = {}
 	},
 	{
 		'VonHeikemen/lsp-zero.nvim',
