@@ -25,6 +25,17 @@ require("lazy").setup({
 			}
 		end
 	},
+	{ 'nvim-tree/nvim-web-devicons' },
+	{
+		'rmagatti/auto-session',
+		opts = {},
+		config = function()
+			require("auto-session").setup {
+				log_level = "error",
+				auto_session_suppress_dirs = { "~/", "~/projects" }
+			}
+		end
+	},
 	{
 		"folke/tokyonight.nvim",
 		lazy = false,
@@ -32,6 +43,35 @@ require("lazy").setup({
 		config = function()
 			vim.cmd('colorscheme tokyonight-night')
 		end
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			'nvim-tree/nvim-web-devicons',
+			'rmagatti/auto-session'
+		},
+		opts = {
+			options = {
+				theme = 'tokyonight'
+			},
+		}
+	},
+	{
+		'numToStr/Comment.nvim',
+		opts = {},
+		lazy = false
+	},
+	{
+		'lewis6991/gitsigns.nvim',
+		opts = {
+			numhl = true,
+			current_line_blame = true,
+		}
+	},
+	{
+		'windwp/nvim-autopairs',
+		event = 'InsertEnter',
+		opts = {}
 	},
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -147,44 +187,6 @@ require("lazy").setup({
 							["[d"] = "@conditional.outer",
 						}
 					},
-					move = {
-						enable = true,
-						set_jumps = true, -- whether to set jumps in the jumplist
-						goto_next_start = {
-							["]m"] = "@function.outer",
-							["]]"] = { query = "@class.outer", desc = "Next class start" },
-							--
-							-- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
-							["]o"] = "@loop.*",
-							-- ["]o"] = { query = { "@loop.inner", "@loop.outer" } }
-							--
-							-- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
-							-- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
-							["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-							["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
-						},
-						goto_next_end = {
-							["]M"] = "@function.outer",
-							["]["] = "@class.outer",
-						},
-						goto_previous_start = {
-							["[m"] = "@function.outer",
-							["[["] = "@class.outer",
-						},
-						goto_previous_end = {
-							["[M"] = "@function.outer",
-							["[]"] = "@class.outer",
-						},
-						-- Below will go to either the start or the end, whichever is closer.
-						-- Use if you want more granular movements
-						-- Make it even more gradual by adding multiple queries and regex.
-						goto_next = {
-							["]d"] = "@conditional.outer",
-						},
-						goto_previous = {
-							["[d"] = "@conditional.outer",
-						}
-					},
 				},
 			}
 		end
@@ -205,14 +207,28 @@ require("lazy").setup({
 			-- Autocompletion
 			{ 'hrsh7th/nvim-cmp' }, -- Required
 			{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-			{
-				'L3MON4D3/LuaSnip',
-				run = "make install_jsregexp"
-			}, -- Required
+			{ 'L3MON4D3/LuaSnip' },
 			{ "rafamadriz/friendly-snippets" },
 			{ 'hrsh7th/cmp-buffer' },
 			{ 'hrsh7th/cmp-path' },
 			{ 'hrsh7th/cmp-cmdline' },
+			{ 'hrsh7th/cmp-calc' },
+			{ 'hrsh7th/cmp-nvim-lsp-document-symbol' },
+			{ 'hrsh7th/cmp-nvim-lsp-signature-help' },
+			{ 'hrsh7th/cmp-emoji' },
+			{ 'hrsh7th/cmp-nvim-lua' },
+			{ 'onsails/lspkind.nvim' },
 		}
 	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		init = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+		end,
+		opts = {
+
+		}
+	}
 })
