@@ -40,4 +40,4 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.path = vim.opt.path + "**"
 
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.o.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
