@@ -15,6 +15,7 @@ return {
 			p = { "<cmd>SessionManager load_session<cr>", "Find [P]rojects" },
 			e = { function() require("oil").toggle_float(vim.fn.getcwd()) end, "File [E]xplorer" },
 			n = { function() require('telescope').extensions.notify.notify() end, "Find [N]otifications" },
+			z = { "<cmd>ZenMode<cr>", "[Z]en Mode"},
 			c = {
 				name = "[C]ode",
 				f = { vim.lsp.buf.format, "[F]ormat Buffer" },
