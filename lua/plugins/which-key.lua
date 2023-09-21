@@ -12,7 +12,7 @@ return {
 			g = { "<cmd>Telescope live_grep<cr>", "[G]rep" },
 			s = { "<cmd>Telescope treesitter<cr>", "Find [S]ymbol" },
 			b = { "<cmd>Telescope buffers<cr>", "Find [B]uffers" },
-			p = { function() require('session-lens').search_session() end, "Find [P]rojects" },
+			p = { "<cmd>SessionManager load_session<cr>", "Find [P]rojects" },
 			e = { function() require("oil").toggle_float(vim.fn.getcwd()) end, "File [E]xplorer" },
 			n = { function() require('telescope').extensions.notify.notify() end, "Find [N]otifications" },
 			c = {
