@@ -21,16 +21,17 @@ return {
 			[[║ ╚═╝░░╚══╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝    ╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░░╚═╝░░░╚═════╝░ ║]],
 			[[╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝]],
 		}
+		
 		dashboard.section.buttons.val = {
-			dashboard.button("e ", "📄 New file", ":ene <BAR> startinsert <CR>"),
-			dashboard.button("f ", "🔭 Find file", ":Telescope find_files<CR>"),
-			dashboard.button("r ", "📂 Recent files", ":Telescope oldfiles<CR>"),
-			dashboard.button("g ", "🔎 Grep", ":Telescope live_grep<CR>"),
-			dashboard.button("d ", "💿 Last session (current dir)", ":SessionManager load_current_dir_session<CR>"),
-			dashboard.button("l ", "📀 Last session", ":SessionManager load_last_session<CR>"),
-			dashboard.button("s ", "💾 Select session", ":SessionManager load_session<CR>"),
-			dashboard.button("c ", "💻 Open configuration", ":cd ~/.config/nvim/<CR>:e ~/.config/nvim/<CR>"),
-			dashboard.button("q ", "👋 Quit NVIM", ":qa<CR>"),
+			dashboard.button("n ", "  [n]ew file", ":ene <BAR> startinsert <CR>"),
+			dashboard.button("f ", "󰮗  [f]iles", ":Telescope find_files<CR>"),
+			dashboard.button("r ", "󱋡  [r]ecent files", ":Telescope oldfiles<CR>"),
+			dashboard.button("g ", "  [g]rep", ":Telescope live_grep<CR>"),
+			dashboard.button("l ", "󱑍  [l]ast session", ":SessionManager load_last_session<CR>"),
+			dashboard.button("d ", "󰔠  [d]irectory session", ":SessionManager load_current_dir_session<CR>"),
+			dashboard.button("s ", "󰪶  [s]elect session", ":SessionManager load_session<CR>"),
+			dashboard.button("c ", "  [c]onfiguration", ":cd ~/.config/nvim/<CR>:e ~/.config/nvim/<CR>"),
+			dashboard.button("q ", "󰩈  [q]uit neovim", ":qa<CR>"),
 		}
 		local handle = io.popen('fortune ║ cowsay')
 		if handle then
