@@ -41,3 +41,7 @@ vim.opt.splitright = true
 vim.opt.path = vim.opt.path + "**"
 
 vim.o.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
+
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0

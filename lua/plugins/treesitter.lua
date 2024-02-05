@@ -80,6 +80,8 @@ return {
 						goto_next_start = {
 							["]m"] = "@function.outer",
 							["]]"] = { query = "@class.outer", desc = "Next class start" },
+							["]c"] = { query = "@call.outer", desc = "Go to next call"},
+							["]p"] = { query = "@parameter.outer", desc = "Go to next parameter"},
 							--
 							-- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
 							["]o"] = "@loop.*",
@@ -97,6 +99,8 @@ return {
 						goto_previous_start = {
 							["[m"] = "@function.outer",
 							["[["] = "@class.outer",
+							["[c"] = { query = "@call.outer", desc = "Go to previous call"},
+							["[p"] = { query = "@parameter.outer", desc = "Go to previous parameter"},
 						},
 						goto_previous_end = {
 							["[M"] = "@function.outer",

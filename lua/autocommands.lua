@@ -11,4 +11,9 @@ vim.api.nvim_create_autocmd({"CmdlineLeave"}, {
 		vim.cmd [[ redraw ]]
 	end
 })
+vim.api.nvim_create_autocmd({"BufWrite"}, {
+	callback = function()
+		vim.lsp.buf.format()
+	end
+})
 

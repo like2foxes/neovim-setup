@@ -18,14 +18,18 @@ return {
 					ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 				})
 			},
-
+			snippet = {
+				expand = function(args)
+					require('luasnip').lsp_expand(args.body)
+				end,
+			},
 			mapping = cmp.mapping.preset.insert({
 				-- `Enter` key to confirm completion
 				['<CR>'] = cmp.mapping.confirm({ select = false }),
 
 				-- Ctrl+Space to trigger completion menu
 				['<C-Space>'] = cmp.mapping.complete(),
-				      ['<C-e>'] = cmp.mapping.abort(),
+				['<C-e>'] = cmp.mapping.abort(),
 				['<C-b>'] = cmp.mapping.scroll_docs(-4),
 				['<C-f>'] = cmp.mapping.scroll_docs(4),
 				-- Navigate between snippet placeholder
@@ -79,8 +83,14 @@ return {
 	end,
 	dependencies = {
 		{ 'hrsh7th/cmp-nvim-lsp' }, -- Required
-		{ 'L3MON4D3/LuaSnip' },
-		{ "rafamadriz/friendly-snippets" },
+		{ 'L3MON4D3/LuaSnip',        build = 'make install_jsregexp' },
+		{ 'saadparwaiz1/cmp_luasnip' },
+		{
+			"rafamadriz/friendly-snippets",
+			config = function()
+				require("luasnip.loaders.from_vscode").lazy_load()
+			end
+		},
 		{ 'hrsh7th/cmp-buffer' },
 		{ 'hrsh7th/cmp-path' },
 		{ 'hrsh7th/cmp-cmdline' },

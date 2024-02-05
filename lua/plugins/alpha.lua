@@ -21,7 +21,6 @@ return {
 			[[║ ╚═╝░░╚══╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝    ╚═╝░░╚═╝░░░╚═╝░░░╚═╝░░╚═╝░░╚═╝╚═╝░░░╚═╝░░░╚═════╝░ ║]],
 			[[╚════════════════════════════════════════════════════════════════════════════════════════════════════════╝]],
 		}
-		
 		dashboard.section.buttons.val = {
 			dashboard.button("n ", "  [n]ew file", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("f ", "󰮗  [f]iles", ":Telescope find_files<CR>"),
@@ -30,6 +29,7 @@ return {
 			dashboard.button("l ", "󱑍  [l]ast session", ":SessionManager load_last_session<CR>"),
 			dashboard.button("d ", "󰔠  [d]irectory session", ":SessionManager load_current_dir_session<CR>"),
 			dashboard.button("s ", "󰪶  [s]elect session", ":SessionManager load_session<CR>"),
+			dashboard.button("h ", "✙  [h]ealth check", ":checkhealth<CR>"),
 			dashboard.button("c ", "  [c]onfiguration", ":cd ~/.config/nvim/<CR>:e ~/.config/nvim/<CR>"),
 			dashboard.button("q ", "󰩈  [q]uit neovim", ":qa<CR>"),
 		}
