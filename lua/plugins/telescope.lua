@@ -1,20 +1,26 @@
 return {
-	'nvim-telescope/telescope.nvim',
-	tag = '0.1.2',
-	dependencies = { 'nvim-lua/plenary.nvim' },
-	config = function()
-		local actions = require("telescope.actions")
-		local trouble = require("trouble.providers.telescope")
-		require 'telescope'.setup {
-			defaults = {
-				file_ignore_patterns = {
-					"node_modules"
-				},
-				mappings = {
-					i = { ["<C-t>"] = trouble.open_with_trouble },
-					n = { ["<C-t>"] = trouble.open_with_trouble },
-				}
-			}
+	{
+		'nvim-telescope/telescope.nvim',
+		tag = '0.1.2',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'xiyaowong/telescope-emoji.nvim'
+		},
+		config = function()
+			local actions = require("telescope.actions")
+			require('telescope').load_extension('ui-select')
+			require('telescope').load_extension('emoji')
+			require('telescope').load_extension('neoclip')
+		end
+	},
+	{
+		'nvim-telescope/telescope-ui-select.nvim',
+		"nvim-telescope/telescope-file-browser.nvim",
+		"nvim-telescope/telescope-hop.nvim",
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+		{
+			'AckslD/nvim-neoclip.lua',
+			opts = {}
 		}
-	end
+	}
 }

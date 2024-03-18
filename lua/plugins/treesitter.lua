@@ -80,12 +80,11 @@ return {
 						goto_next_start = {
 							["]m"] = "@function.outer",
 							["]]"] = { query = "@class.outer", desc = "Next class start" },
-							["]c"] = { query = "@call.outer", desc = "Go to next call"},
-							["]p"] = { query = "@parameter.outer", desc = "Go to next parameter"},
+							["]c"] = { query = "@call.outer", desc = "Go to next call" },
+							["]p"] = { query = "@parameter.outer", desc = "Go to next parameter" },
 							--
 							-- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
-							["]o"] = "@loop.*",
-							-- ["]o"] = { query = { "@loop.inner", "@loop.outer" } }
+							["]o"] = { query = { "@loop.inner", "@loop.outer" }, desc = "Next loop" },
 							--
 							-- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
 							-- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
@@ -99,8 +98,8 @@ return {
 						goto_previous_start = {
 							["[m"] = "@function.outer",
 							["[["] = "@class.outer",
-							["[c"] = { query = "@call.outer", desc = "Go to previous call"},
-							["[p"] = { query = "@parameter.outer", desc = "Go to previous parameter"},
+							["[c"] = { query = "@call.outer", desc = "Go to previous call" },
+							["[p"] = { query = "@parameter.outer", desc = "Go to previous parameter" },
 						},
 						goto_previous_end = {
 							["[M"] = "@function.outer",
