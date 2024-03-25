@@ -1,9 +1,13 @@
 return {
 	"neovim/nvim-lspconfig",
 	dependencies = {
+
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
-			{ "williamboman/mason.nvim", opts = {} },
+			{
+				"williamboman/mason.nvim",
+				opts = {},
+			},
 		},
 		opts = {},
 		config = function()
@@ -58,7 +62,18 @@ return {
 								"--hostPID",
 								tostring(vim.fn.getpid()),
 							},
+							enable_import_completion = true,
+							enable_decompilation_support = true,
+							orgenize_imports_on_format = true,
+							enable_roslyn_analyzers = true,
 						}
+						vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Hover" })
+						vim.keymap.set("n", "gR", "<cmd>lua require('omnisharp_extended').lsp_references()<cr>",
+							{ desc = "References" })
+						vim.keymap.set("n", "gd", "<cmd>lua require('omnisharp_extended').lsp_definition()<cr>",
+							{ desc = "Go to Definition" })
+						vim.keymap.set("n", "gi", "<cmd>lua require('omnisharp_extended').lsp_implementation()<cr>",
+							{ desc = "Go to Implementation" })
 					else
 						require("lspconfig")[server_name].setup {}
 					end

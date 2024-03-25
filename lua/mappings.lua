@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "gR", function() require("trouble").open("lsp_references") end, { desc = "References" })
 vim.keymap.set("t", "", ">", { noremap = true })
 
 vim.keymap.set("n", "gb", "<nop>", { noremap = true })
